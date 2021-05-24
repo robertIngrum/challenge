@@ -2,7 +2,7 @@
 
 class CreateChallenge < ActiveRecord::Migration[6.1]
   def change
-    create_table :challenges do |t|
+    create_table(:challenges) do |t|
       t.string(:title)
       t.string(:description)
       t.integer(:state)
@@ -11,7 +11,7 @@ class CreateChallenge < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    create_join_table :users, :challenges, table_name: :subscriptions do |t|
+    create_join_table(:users, :challenges, table_name: :subscriptions) do |t|
       t.integer(:role)
 
       t.index(:user_id)

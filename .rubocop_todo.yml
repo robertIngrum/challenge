@@ -1,0 +1,4 @@
+Rails/BulkChangeTable:
+  Exclude:
+    - "db/migrate/20210524104544_create_user.rb"
+    - "db/migrate/20210524105006_create_challenge.rb"
