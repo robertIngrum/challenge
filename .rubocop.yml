@@ -1,0 +1,38 @@
+inherit_gem:
+  rubocop-shopify: rubocop.yml
+
+inherit_from:
+  - .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'node_modules/**/*'
+    - 'db/schema.rb'
+    - 'bin/*'
+  TargetRubyVersion: '2.7'
+  NewCops: enable
+
+Rails:
+  Enabled: true
+
+Bundler/DuplicatedGem:
+  Enabled: true
+
+Bundler/OrderedGems:
+  Enabled: true
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - staging
+    - development
+    - test
