@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "Challenges",
+      template: "./app/ui/htmlTemplates/base.html"
     })
   ],
   output: {
@@ -19,12 +20,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.m?js(|x)$/,
         exclude: /.yarn/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"]
+            presets: ["@babel/preset-env", "@babel/preset-react"]
           }
         }
       },

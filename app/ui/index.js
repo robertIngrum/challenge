@@ -1,11 +1,11 @@
-import './style.scss';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Home } from './apps';
 
-function component() {
-  const element = document.createElement('div');
+const appContainer = document.body.appendChild(document.getElementById('react-root'));
+const renderMethod = module.hot ? ReactDOM.hydrate : ReactDOM.render;
 
-  element.innerHTML = "Hello webpack";
-
-  return element;
-}
-
-document.body.appendChild(component());
+renderMethod(
+  React.createElement(Home),
+  appContainer
+);
